@@ -1,11 +1,13 @@
 import React from "react";
 import { formatCurrency } from "../util";
 
-const products = (props) => {
+const products = ({ products }) => {
+  console.log("products json data ", products);
+  // console.log(Array.isArray(products));
   return (
     <div>
       <ul className="products">
-        {props.products.map((product) => (
+        {products.map((product) => (
           <li key={product._id}>
             <div className="product">
               <a href={"#" + product._id}>
